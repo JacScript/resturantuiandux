@@ -1,11 +1,11 @@
 import React from "react";
 
 import { SubHeading, MenuItem } from "../../components";
-import { data, images } from "../../constants";
+import { data, images  } from "../../constants/index";
 import "./SpecialMenu.css";
 
 const SpecialMenu = () => (
-  <div className="app__specialMenu flex__center section__padding" id="menu">
+  <div className="app__bg app__specialMenu flex__center section__padding" id="menu">
     <div className="app__specialMenu-title">
       <SubHeading title="Menu that fits your palatte" />
       <h1 className="headtext__cormorant">Today&apos;s Special</h1>
@@ -14,10 +14,10 @@ const SpecialMenu = () => (
     <div className="app__specialMenu-menu">
       <div className="app__specialMenu-menu_wine  flex__center">
         <p className="app__specialMenu-menu_heading">Wine & Beer</p>
-        <div className="app__specialMenu_menu_items">
-          {data.wines.map((wine, index) => (
+        <div className="app__specialMenu_menu_items">         
+          {data.wines.map((wine, id) => (
             <MenuItem
-              key={wine.title + index}
+              key={wine.id}
               title={wine.title}
               price={wine.price}
               tags={wine.tags}
